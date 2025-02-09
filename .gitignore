@@ -6,8 +6,10 @@
 /coverage/
 /docs/pages/
 
-**/dist/*
-/dist/esm/*
+# NOTE: Allow ESM build to be committed so we can install and use from repository
+!/dist/esm/*
+**/dist/browser
+**/dist/umd
 
 # caches
 .eslintcache
