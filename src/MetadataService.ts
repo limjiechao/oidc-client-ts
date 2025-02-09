@@ -23,7 +23,8 @@ export class MetadataService {
     public constructor(private readonly _settings: OidcClientSettingsStore) {
         this._metadataUrl = this._settings.metadataUrl;
         this._jsonService = new JsonService(
-            ["application/jwk-set+json"],
+            // NOTE: Add "text/plain" to access OpenID configuration of ADB's IBM Security Verify Access
+            ["application/jwk-set+json", "text/plain"],
             null,
             this._settings.extraHeaders,
         );
